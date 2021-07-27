@@ -1,5 +1,7 @@
 # Terraform module which creates IAM Role and IAM Policy resources on AWS.
-
+provider "aws" {
+  region = var.region
+}
 
 resource "aws_iam_role" "role" {
   count = var.enabled ? 1 : 0
